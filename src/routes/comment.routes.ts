@@ -5,6 +5,12 @@ import { getCommentByPostAndParentComment, postComment } from '../controllers/co
 const router = Router();
 
 router
+  .route('/:post')
+  .get([
+    param('post').optional().isMongoId()
+  ], getCommentByPostAndParentComment);
+
+router
   .route('/:post/:id')
   .get([
     param('post').optional().isMongoId(),
@@ -15,7 +21,7 @@ router
   .route('/')
   .post([
     body('publication').isString(),
-    body('author').isString().isLength({ min: 3 }),
+    body('username').isString().isLength({ min: 3 }),
     body('content').isString().isLength({ min: 3 }),
     body('parent').optional().isMongoId()
   ], postComment);

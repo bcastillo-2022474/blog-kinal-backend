@@ -1,4 +1,4 @@
-import { Schema, model } from 'mongoose';
+import { Schema, model, now } from 'mongoose';
 
 const Comment = new Schema({
   parent: {
@@ -14,7 +14,8 @@ const Comment = new Schema({
   },
   createdAt: {
     type: String,
-    required: true
+    required: true,
+    default: now().toISOString(),
   },
   // Identifier which relationates the comment with a post
   publication: {

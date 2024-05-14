@@ -18,12 +18,12 @@ export const getCommentByPostAndParentComment = async (req: Request, res: Respon
 
 export const postComment = async (req: Request, res: Response): Promise<void> => {
   try {
-    const { publication, parent, author, content } = req.body;
+    const { publication, parent, username, content } = req.body;
     const isParentAvailable = Boolean(parent);
 
     const comment = new Comment({
       publication,
-      author,
+      username,
       content,
       ...(isParentAvailable ? { parent } : {})
     });
