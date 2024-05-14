@@ -2,7 +2,8 @@
   "name": "blog-kinal-backend",
   "version": "1.0.0",
   "scripts": {
-    "dev": "nodemon server.ts"
+    "dev": "nodemon server.ts",
+    "start": "node --import tsx server.ts"
   },
   "keywords": [],
   "author": "",
@@ -13,7 +14,8 @@
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "express-validator": "^7.0.1",
-    "mongoose": "^8.3.4"
+    "mongoose": "^8.3.4",
+    "tsx": "^4.10.2"
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",
@@ -30,7 +32,6 @@
     "nodemon": "^3.1.0",
     "prettier": "^3.2.5",
     "ts-node": "^10.9.2",
-    "tsx": "^4.10.2",
     "typescript": "^5.4.5"
   }
 }
